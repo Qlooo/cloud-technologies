@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:5000"
+    environment:
+      GUNICORN_CMD_ARGS: "--log-level ${LOG_LEVEL:-info}"
+    volumes:
+      - todo_data:/app/instance
+
+volumes:
+  todo_data:
