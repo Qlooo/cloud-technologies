@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-todo-config
+  namespace: cloud-lab2
+data:
+  GUNICORN_CMD_ARGS: "--log-level info"

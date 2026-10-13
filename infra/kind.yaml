@@ -1,0 +1,14 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "127.0.0.1"
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /opt/cloud-practice/k8s-data/flask-todo
+        containerPath: /data/flask-todo
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 8081
+        listenAddress: "127.0.0.1"
+        protocol: TCP

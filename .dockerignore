@@ -10,3 +10,6 @@ instance
 *.sqlite*
 *.db*
 *.log
+
+# Kubernetes configuration is not needed in the application image
+k8s
